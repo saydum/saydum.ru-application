@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -35,7 +35,7 @@
             color: white;
         }
         i:hover {
-            color: #0a53be;
+            color: #198754;
         }
     </style>
 </head>
@@ -51,8 +51,6 @@
                 saydum.ru
             </a>
         </h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
         <nav id="navbar" class="navbar">
             <ul class="text-center">
@@ -73,9 +71,9 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
         <p class="pt-3">
-            <a class="btn btn-outline-primary"
+            <a class="btn btn-success"
                href="https://drive.google.com/file/d/1kAmm3P7H5Hna9BrW7AnvD07_-14hk52w/view?usp=sharing" role="button">
-                Download CV
+                Resume
             </a>
         </p>
     </div>
@@ -88,9 +86,11 @@
         <div class="hero-content display-table">
             <div class="table-cell">
                 <div class="container">
-                    <!--<p class="display-6 color-d">Hello, world!</p>-->
-                    <p class="hero-subtitle"><span class="typed"
-                                                   data-typed-items="Hello!, My name is Saydum, I am Full Stack developer"></span></p>
+                    <p class="hero-subtitle">
+                        <span class="typed"
+                              data-typed-items="Hello!, My name is Saydum, I am Backend developer">
+                        </span>
+                    </p>
                     <div class="mb-4">
                         <ul class="nav justify-content-center">
 
@@ -126,14 +126,12 @@
     </div>
 </main>
 
-<!-- Vendor JS Files -->
 <script th:src="@{/web/assets/vendor/purecounter/purecounter_vanilla.js}"></script>
 <script th:src="@{/web/assets/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 <script th:src="@{/web/assets/vendor/glightbox/js/glightbox.min.js}"></script>
 <script th:src="@{/web/assets/vendor/swiper/swiper-bundle.min.js}"></script>
 <script th:src="@{/web/assets/vendor/typed.js/typed.umd.js}"></script>
 
-<!-- Template Main JS File -->
 <script th:src="@{/web/assets/js/main.js}"></script>
 
 </body>
