@@ -7,10 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import ru.saydum.app.entity.Post;
 import ru.saydum.app.repository.PostRepository;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 @Controller
 public class PostController {

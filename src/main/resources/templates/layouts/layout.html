@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Personal web site Saydum Khalibekov Full Stack developer</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link th:href="@{/web/assets/img/favicon.png}" rel="icon">
+    <link th:href="@{/web/assets/img/apple-touch-icon.png}" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link th:href="@{/web/assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/web/assets/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{/web/assets/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+    <link th:href="@{/web/assets/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link th:href="@{/web/assets/css/style.css}" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: DevFolio
+    * Updated: May 30 2023 with Bootstrap v5.3.0
+    * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+
+</head>
+
+<body>
+
+<header id="header" class="fixed-top">
+
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <h1 class="logo">
+            <a th:href="@{/}">
+                saydum.ru
+            </a>
+        </h1>
+
+        <nav id="navbar" class="navbar">
+            <ul class="text-center">
+                <li>
+                    <a class="nav-link scrollto"
+                       th:href="@{/}">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link scrollto "
+                       th:href="@{/posts}">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+
+        <p class="pt-3">
+            <a class="btn btn-success"
+               href="https://drive.google.com/file/d/1kAmm3P7H5Hna9BrW7AnvD07_-14hk52w/view?usp=sharing" role="button">
+                Resume
+            </a>
+        </p>
+    </div>
+
+</header>
+
+<main layout:fragment="content"></main>
+
+<script th:src="@{/web/assets/vendor/purecounter/purecounter_vanilla.js}"></script>
+<script th:src="@{/web/assets/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/web/assets/vendor/glightbox/js/glightbox.min.js}"></script>
+<script th:src="@{/web/assets/vendor/swiper/swiper-bundle.min.js}"></script>
+<script th:src="@{/web/assets/vendor/typed.js/typed.umd.js}"></script>
+
+<script th:src="@{/web/assets/js/main.js}"></script>
+
+</body>
+
+</html>

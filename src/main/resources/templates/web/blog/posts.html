@@ -1,67 +1,22 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html
+        lang="en"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layouts/layout.html}"
+>
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Posts</title>
 
-    <title>Blog posts saydum.ru</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link th:href="@{/web/assets/img/favicon.png}" rel="icon">
-    <link th:href="@{/web/assets/img/apple-touch-icon.png}" rel="apple-touch-icon">
-
-    <!-- Vendor CSS Files -->
-    <link th:href="@{/web/assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-    <link th:href="@{/web/assets/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
-    <link th:href="@{/web/assets/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
-    <link th:href="@{/web/assets/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link th:href="@{/web/assets/css/style.css}" rel="stylesheet">
+    <style th:inline="css">
+        header {
+            background-color: #1a1d20;
+        }
+    </style>
 </head>
 <body>
 
-<header id="header" class="fixed-top bg-dark">
-    <div class="container d-flex align-items-center justify-content-between">
-
-        <h1 class="logo">
-            <a th:href="@{/}">
-                <img th:src="@{'/web/assets/img/logo.png'}" alt="">
-            </a>
-        </h1>
-
-        <nav id="navbar" class="navbar justify-content-end">
-            <ul class="text-center">
-                <li>
-                    <a class="nav-link scrollto"
-                       th:href="@{/}">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a class="nav-link scrollto "
-                       th:href="@{/posts}">
-                        Blog
-                    </a>
-                </li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-    </div>
-</header>
-
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div th:if="${error_message}" class="card bg-danger" th:text="${error_message}"></div>
-        </div>
-    </div>
-</div>
-<main class="py-5">
+<main layout:fragment="content" class="py-5">
     <section id="blog" class="blog-mf sect-pt4 route">
         <div class="container">
             <div class="row">
@@ -92,17 +47,6 @@
         </div>
     </section>
 </main>
-
-
-<!-- Vendor JS Files -->
-<script th:src="@{/web/assets/vendor/purecounter/purecounter_vanilla.js}"></script>
-<script th:src="@{/web/assets/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
-<script th:src="@{/web/assets/vendor/glightbox/js/glightbox.min.js}"></script>
-<script th:src="@{/web/assets/vendor/swiper/swiper-bundle.min.js}"></script>
-<script th:src="@{/web/assets/vendor/typed.js/typed.umd.js}"></script>
-
-<!-- Template Main JS File -->
-<script th:src="@{/web/assets/js/main.js}"></script>
 
 </body>
 </html>
