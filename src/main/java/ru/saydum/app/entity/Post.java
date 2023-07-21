@@ -21,4 +21,6 @@ public class Post {
     @Column(name = "create_date_post")
     private Date createDatePost;
 
+    private Boolean published;
+
 }
