@@ -1,16 +1,15 @@
 package ru.saydum.app.controller.web;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 import ru.saydum.app.entity.Post;
 import ru.saydum.app.repository.PostRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
+@RestController
 public class PostController {
 
     private final PostRepository postRepository;
@@ -20,28 +19,26 @@ public class PostController {
     }
 
     @GetMapping("/posts")
-    public String getAllPosts(Model model) {
+    public List<Post> getAllPosts() {
+        List<Post> posts = new ArrayList<>();
+
         try {
-            List<Post> posts = new ArrayList<>();
             postRepository.findAll().forEach(posts::add);
-            model.addAttribute("posts", posts);
         } catch (Exception e) {
-            model.addAttribute("error_message", e.getMessage());
+            e.printStackTrace();
         }
-        return "web/blog/posts";
+        return posts;
     }
 
     @GetMapping("/posts/{id}")
-    public String getPostById(@PathVariable("id") Integer id, Model model) {
+    public Post getPostById(@PathVariable("id") Integer id) {
+        Post post = new Post();
         try {
-
-            Post post = postRepository.findById(id).get();
-            model.addAttribute("post", post);
-
+            post = postRepository.findById(id).get();
         } catch (Exception e) {
-            model.addAttribute("error_message", e.getMessage());
+            e.printStackTrace();
         }
 
-        return "web/blog/show";
+        return post;
     }
 }
