@@ -1,8 +1,6 @@
 package ru.saydum.app.controller.web;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.saydum.app.entity.Post;
 import ru.saydum.app.repository.PostRepository;
 
@@ -10,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin("http://localhost:5173/posts")
+@RequestMapping("/posts")
 public class PostController {
 
     private final PostRepository postRepository;
@@ -18,7 +18,7 @@ public class PostController {
         this.postRepository = postRepository;
     }
 
-    @GetMapping("/posts")
+    @GetMapping("")
     public List<Post> getAllPosts() {
         List<Post> posts = new ArrayList<>();
 
@@ -30,7 +30,7 @@ public class PostController {
         return posts;
     }
 
-    @GetMapping("/posts/{id}")
+    @GetMapping("/{id}")
     public Post getPostById(@PathVariable("id") Integer id) {
         Post post = new Post();
         try {
