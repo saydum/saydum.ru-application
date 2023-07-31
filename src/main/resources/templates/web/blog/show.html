@@ -1,0 +1,39 @@
+<!doctype html>
+<html
+        lang="en"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layouts/web.html}"
+>
+<head>
+    <title>Создание сайтов и веб-приложении saydum.ru</title>
+    <style th:inline="css">
+        header {
+            background-color: #1a1d20;
+        }
+    </style>
+</head>
+<body>
+
+<main layout:fragmebt="content" id="main" class="py-5">
+
+    <section class="blog-wrapper sect-pt4" id="blog">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md">
+                    <div class="post-box">
+                        <div class="post-meta">
+                            <h1 class="article-title" th:text="${post.getTitle()}"></h1>
+                        </div>
+                        <div class="article-content">
+                            <p th:text="${post.getText()}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+</body>
+
+</html>

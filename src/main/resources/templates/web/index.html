@@ -1,0 +1,108 @@
+<!doctype html>
+<html
+        lang="ru"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layouts/web.html}"
+>
+<head>
+    <title>Создание сайтов и веб-приложении saydum.ru</title>
+    <!--      Daily Grow-->
+    <script type="text/javascript">
+        window.dgSocialWidgetData = {
+            widgetId: '930a8bf7-c570-45d8-bc84-de97b3c36eb5',
+            apiUrl: 'https://app.daily-grow.com/sw/api/v1',
+        };
+    </script>
+    <script type="text/javascript" src="https://app.daily-grow.com/social-widget/init.js" defer></script>
+    <!--     End Daily Grow -->
+    <style th:inline="css">
+        i {
+            font-size: 38px;
+            color: white;
+        }
+        i:hover {
+            color: #198754;
+        }
+    </style>
+</head>
+<body>
+<main layout:fragment="content">
+    <div id="hero" class="hero route bg-image" th:style="'background: url(/web/assets/img/bg.jpg); background-position: center; background-repeat: no-repeat;'">
+        <div class="overlay-itro"></div>
+        <div class="hero-content display-table">
+            <div class="table-cell">
+                <div class="container">
+                    <p class="hero-subtitle">
+                        <span class="typed"
+                              data-typed-items="Привет!, Меня зовут Сайдум, Я создаю веб-приложении.">
+                        </span>
+                    </p>
+                    <div class="mb-4">
+                        <ul class="nav justify-content-center">
+
+                            <li class="nav-item">
+                                <a href="https://github.com/saydum/" class="nav-link" target="_blank">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="https://t.me/saydum47" class="nav-link" target="_blank">
+                                    <i class="bi bi-telegram"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="https://www.youtube.com/channel/UCGgou2mPkfTyv9SULB2nckg" class="nav-link" target="_blank">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item" title="Резюме">
+                                <button
+                                        type="button"
+                                        class="btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#resumeGetModal">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </button>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="resumeGetModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Скачать резюме</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="post-date">
+                        <a th:href="@{'/web/assets/pdf/Saydum_Java_Developer.pdf'}">
+                            <span class="bi bi-filetype-java"></span> Java developer
+                        </a>
+                    </div>
+
+                    <div class="post-date">
+                        <a th:href="@{'/web/assets/pdf/Saydum_Php_Developer.pdf'}">
+                            <span class="bi bi-filetype-php"></span> Php developer
+
+                        </a>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
