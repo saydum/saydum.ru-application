@@ -1,25 +1,20 @@
-<script setup>
-
-</script>
-
 <template>
   <div class="modal fade" id="resumeGetModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content text-center">
         <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLabel">Download resume</h3>
+          <h3 class="modal-title" id="exampleModalLabel">Скачать резюме</h3>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <!--@TODO(Нужно добавить ссылки на резюме)-->
           <div class="post-date">
-            <a href="">
+            <a href="Saydum_Java_Developer.pdf">
               <span class="bi bi-filetype-java"></span> Java developer
             </a>
           </div>
 
           <div class="post-date">
-            <a href="">
+            <a href="Saydum_Php_Developer.pdf">
               <span class="bi bi-filetype-php"></span> Php developer
 
             </a>

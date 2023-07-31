@@ -23,23 +23,23 @@ const path = computed(() => route.path);
           <li>
             <RouterLink class="nav-link scrollto"
                to="/">
-              Home
+              Главное
             </RouterLink>
           </li>
 
           <li>
             <RouterLink class="nav-link scrollto "
                to="/posts">
-              Blog
+              Блог
             </RouterLink>
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
 
-      <p class="pt-3">
+      <p class="pt-3" v-if="path === '/'">
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#resumeGetModal">
-          Resume
+          Резюме
         </button>
       </p>
     </div>

@@ -1,4 +1,21 @@
 <script setup>
+
+import {ref, watchEffect} from "vue";
+import axios from "axios";
+
+const posts = ref([]);
+
+const config = {
+  headers: {
+    "Access-Control-Allow-Origin": true,
+  }
+};
+
+watchEffect( async () => {
+  const res = await axios.get("http://localhost:8080/posts", config);
+  posts.value = res.data;
+});
+
 </script>
 
 <template>
@@ -7,13 +24,13 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-md-4 py-3">
+        <div class="col-md-4 py-3" v-for="post in posts" :key="post.id">
 
           <div class="card card-blog">
             <div class="card-body">
               <h3 class="card-title">
                 <a href="">
-<!--                  Title-->
+                  {{ post.title }}
                 </a>
               </h3>
             </div>
