@@ -4,7 +4,7 @@ import type { TypedOptions } from "@duskmoon/vue3-typed-js";
 import ResumeGetModal from "../components/ResumeGetModal.vue";
 
 const options: TypedOptions = {
-  strings: ["Привет!", "Меня зовут Сайдум.", "Я Backend разработчик."],
+  strings: ["Hello!", "My name is Saydum.", "I'm Backend developer."],
   loop: true,
   typeSpeed: 120,
 };
@@ -49,6 +49,16 @@ const options: TypedOptions = {
                   <a href="#" class="nav-link">
                     <i class="bi bi-instagram"></i>
                   </a>
+                </li>
+
+                <li class="nav-item" title="Резюме">
+                  <button
+                      type="button"
+                      class="btn"
+                      data-bs-toggle="modal"
+                      data-bs-target="#resumeGetModal">
+                    <i class="bi bi-file-earmark-text"></i>
+                  </button>
                 </li>
 
               </ul>

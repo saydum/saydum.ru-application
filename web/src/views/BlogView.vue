@@ -5,17 +5,11 @@ import axios from "axios";
 
 const posts = ref([]);
 
-const config = {
-  headers: {
-    "Access-Control-Allow-Origin": true,
-  }
-};
-
 watchEffect( async () => {
-  const res = await axios.get("http://localhost:8080/posts", config);
+  const res = await axios.get("http://localhost:8080/api/posts");
   posts.value = res.data;
 });
-
+console.log(posts)
 </script>
 
 <template>
@@ -29,7 +23,7 @@ watchEffect( async () => {
           <div class="card card-blog">
             <div class="card-body">
               <h3 class="card-title">
-                <a href="">
+                <a href="/posts/{{post.id.get()}}">
                   {{ post.title }}
                 </a>
               </h3>

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin("http://localhost:5173/posts")
-@RequestMapping("/posts")
+@CrossOrigin(origins = "http://localhost:80")
+@RequestMapping("/api/posts")
 public class PostController {
 
     private final PostRepository postRepository;

@@ -19,29 +19,23 @@ const path = computed(() => route.path);
       </h1>
 
       <nav id="navbar" class="navbar">
-        <ul class="text-center">
+        <ul class="text-end">
           <li>
             <RouterLink class="nav-link scrollto"
                to="/">
-              Главное
+              Home
             </RouterLink>
           </li>
 
           <li>
             <RouterLink class="nav-link scrollto "
                to="/posts">
-              Блог
+              Blog
             </RouterLink>
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
-
-      <p class="pt-3" v-if="path === '/'">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#resumeGetModal">
-          Резюме
-        </button>
-      </p>
     </div>
   </header>
 </template>
