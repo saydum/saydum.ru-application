@@ -2,20 +2,11 @@
 <html
         lang="ru"
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-        layout:decorate="~{layouts/web.html}"
+        layout:decorate="~{layouts/admin.html}"
 >
 
 <head>
     <title th:text="${post.getTitle()}"></title>
-    <style th:inline="css">
-        header {
-            background-color: #1a1d20;
-        }
-        .content {
-            margin-left: 16px;
-            margin-right: 16px;
-        }
-    </style>
 </head>
 
 <body>

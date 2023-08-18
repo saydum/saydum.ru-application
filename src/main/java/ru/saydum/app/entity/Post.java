@@ -16,6 +16,7 @@ public class Post {
 
     private String title;
 
+    @Column(columnDefinition = "TEXT")
     private String text;
 
     @Column(name = "create_date_post")

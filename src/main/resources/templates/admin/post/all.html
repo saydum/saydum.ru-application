@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+        lang="ru"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layouts/admin.html}"
+>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>All posts</title>
 </head>
+
 <body>
 
+<div layout:fragment="content" class="content-wrapper py-4">
+
+
+    <section class="content">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">All posts</h3>
+
+                <div class="card-tools">
+                    <a th:href="@{/admin/posts/add}" class="btn btn-outline-success">Add new post</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Create data</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="post : ${posts}">
+                        <th scope="row" th:text="${post.getId()}"></th>
+                        <td th:text="${post.getTitle()}"></td>
+                        <td th:text="${post.getCreateDatePost()}"></td>
+<!--                        <td class="text-success">Опублиован</td>-->
+                        <td class="text-danger">В черновике</td>
+
+                        <td class="nav">
+                            <a th:href="@{'/admin/posts/get/' + ${post.getId()}}" class="text-success nav-link">
+                                <i class="far fa-eye"></i>
+                            </a>
+                            <a th:href="@{'/admin/posts/delete/' + ${post.getId()}}" class="text-danger nav-link">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+</div>
 </body>
 </html>
